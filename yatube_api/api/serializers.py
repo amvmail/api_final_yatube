@@ -13,8 +13,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(read_only=True, slug_field='username',
-                                          default=serializers.CurrentUserDefault())
+    author = serializers.SlugRelatedField(
+        read_only=True, slug_field='username',
+        default=serializers.CurrentUserDefault()
+    )
     group = serializers.PrimaryKeyRelatedField(
         queryset=Group.objects.all(), required=False)
 
@@ -24,8 +26,10 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(slug_field='username', read_only=True,
-                                          default=serializers.CurrentUserDefault())
+    author = serializers.SlugRelatedField(
+        slug_field='username', read_only=True,
+        default=serializers.CurrentUserDefault()
+    )
     comments = CommentSerializer(many=True, required=False)
 
     class Meta:
@@ -41,8 +45,10 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class FollowSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='username',
-                                        default=serializers.CurrentUserDefault())
+    user = serializers.SlugRelatedField(
+        queryset=User.objects.all(), slug_field='username',
+        default=serializers.CurrentUserDefault()
+    )
     # было read_only=True вместо queryset
     following = serializers.SlugRelatedField(slug_field='username',
                                              queryset=User.objects.all())
