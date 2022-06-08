@@ -59,3 +59,58 @@ python3 manage.py runserver
 Запустить проект (Win):
 
 python manage.py runserver
+
+
+## Описание работы:
+
+Просмотр документации REDOC к api (через браузер):
+
+http://127.0.0.1:8000/redoc/
+
+Создание пользователя (POST):
+
+http://127.0.0.1:8000/auth/users/
+
+Получение токена (Bearer) (POST):
+
+http://127.0.0.1:8000/auth/jwt/create/
+
+Получение постов (GET):
+
+http://127.0.0.1:8000/api/v1/posts/
+
+Создание постов (POST):
+
+http://127.0.0.1:8000/api/v1/posts/
+
+Получение одного поста (GET):
+
+http://127.0.0.1:8000/api/v1/posts/1/
+
+Получение постов с пагинацией (GET, пример с limit и offset):
+
+http://127.0.0.1:8000/api/v1/posts/?limit=2&offset=2
+
+Получение комментария (GET):
+
+http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
+
+Создание комментария (POST):
+
+http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
+
+Получение списка сообществ (GET):
+
+http://127.0.0.1:8000/api/v1/groups/
+
+Просмотр данных о сообществе (GET):
+
+http://127.0.0.1:8000/api/v1/groups/{id}/
+
+Просмотр подписок (GET):
+
+http://127.0.0.1:8000/api/v1/follow/
+
+Создание подписки (POST):
+
+http://127.0.0.1:8000/api/v1/follow/
