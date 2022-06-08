@@ -3,7 +3,7 @@ from rest_framework import filters, permissions, viewsets
 from rest_framework import generics
 from rest_framework.exceptions import PermissionDenied
 from .permissions import OwnerOrReadOnly, ReadOnly
-from posts.models import Comment, Follow, Post, Group
+from posts.models import Comment, Post, Group
 from .serializers import (CommentSerializer, FollowSerializer, PostSerializer,
                           GroupSerializer)
 
